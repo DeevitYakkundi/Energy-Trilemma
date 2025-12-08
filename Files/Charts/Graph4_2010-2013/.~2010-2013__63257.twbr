@@ -1,0 +1,856 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20252.25.1003.1601                               -->
+<workbook original-version='18.1' source-build='2025.2.4 (20252.25.1003.1601)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <repository-location id='2010-2013_17650884619210' path='/workbooks' revision='1.2' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Zero Price' datatype='real' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='0.0'>
+        <calculation class='tableau' formula='0.0' />
+      </column>
+    </datasource>
+    <datasource caption='sa_market_diurnal_price' inline='true' name='federated.0hv8psl015hkar1gfdxrt0a0y7qm' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='sa_market_diurnal_price' name='textscan.04114ok00pkflt1f088r608kbokp'>
+            <connection class='textscan' directory='/Users/deevit/Desktop/Challenge/data/Charts/Graph4_2010-2013' filename='sa_market_diurnal_price.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.04114ok00pkflt1f088r608kbokp' name='sa_market_diurnal_price.csv' table='[sa_market_diurnal_price#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+            <column datatype='integer' name='year' ordinal='0' />
+            <column datatype='integer' name='month' ordinal='1' />
+            <column datatype='string' name='season' ordinal='2' />
+            <column datatype='integer' name='hour' ordinal='3' />
+            <column datatype='real' name='price' ordinal='4' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[sa_market_diurnal_price.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[sa_market_diurnal_price.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sa_market_diurnal_price.csv_B5964F430EE6445193EDEE3A99AED9D4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[sa_market_diurnal_price.csv]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sa_market_diurnal_price.csv_B5964F430EE6445193EDEE3A99AED9D4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>season</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[season]</local-name>
+            <parent-name>[sa_market_diurnal_price.csv]</parent-name>
+            <remote-alias>season</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[sa_market_diurnal_price.csv_B5964F430EE6445193EDEE3A99AED9D4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hour</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[hour]</local-name>
+            <parent-name>[sa_market_diurnal_price.csv]</parent-name>
+            <remote-alias>hour</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sa_market_diurnal_price.csv_B5964F430EE6445193EDEE3A99AED9D4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[price]</local-name>
+            <parent-name>[sa_market_diurnal_price.csv]</parent-name>
+            <remote-alias>price</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sa_market_diurnal_price.csv_B5964F430EE6445193EDEE3A99AED9D4]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='sa_market_diurnal_price.csv' datatype='table' name='[__tableau_internal_object_id__].[sa_market_diurnal_price.csv_B5964F430EE6445193EDEE3A99AED9D4]' role='measure' type='quantitative' />
+      <column caption='Hour' datatype='integer' name='[hour]' role='measure' type='quantitative' />
+      <column caption='Month' datatype='integer' name='[month]' role='dimension' type='quantitative' />
+      <column caption='Price' datatype='real' name='[price]' role='measure' type='quantitative' />
+      <column caption='Season' datatype='string' name='[season]' role='dimension' type='nominal' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/1s/f2lc3nsj7wd3r26zzbgpbk2h0000gn/T/tableau-temp/#TableauTemp_0gurye31u4lpmi1bomk5o024g9t6.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>year</remote-alias>
+              <ordinal>0</ordinal>
+              <family>sa_market_diurnal_price.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sa_market_diurnal_price.csv_B5964F430EE6445193EDEE3A99AED9D4]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>month</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[month]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>month</remote-alias>
+              <ordinal>1</ordinal>
+              <family>sa_market_diurnal_price.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sa_market_diurnal_price.csv_B5964F430EE6445193EDEE3A99AED9D4]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>season</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[season]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>season</remote-alias>
+              <ordinal>2</ordinal>
+              <family>sa_market_diurnal_price.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[sa_market_diurnal_price.csv_B5964F430EE6445193EDEE3A99AED9D4]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>hour</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[hour]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>hour</remote-alias>
+              <ordinal>3</ordinal>
+              <family>sa_market_diurnal_price.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sa_market_diurnal_price.csv_B5964F430EE6445193EDEE3A99AED9D4]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>price</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[price]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>price</remote-alias>
+              <ordinal>4</ordinal>
+              <family>sa_market_diurnal_price.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>67964</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sa_market_diurnal_price.csv_B5964F430EE6445193EDEE3A99AED9D4]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout common-percentage='0.628975' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.371025' show-structure='true' user-set-layout-v2='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='sa_market_diurnal_price.csv' id='sa_market_diurnal_price.csv_B5964F430EE6445193EDEE3A99AED9D4'>
+            <properties context=''>
+              <relation connection='textscan.04114ok00pkflt1f088r608kbokp' name='sa_market_diurnal_price.csv' table='[sa_market_diurnal_price#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+                  <column datatype='integer' name='year' ordinal='0' />
+                  <column datatype='integer' name='month' ordinal='1' />
+                  <column datatype='string' name='season' ordinal='2' />
+                  <column datatype='integer' name='hour' ordinal='3' />
+                  <column datatype='real' name='price' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='sa_market_diurnal_price_2023-2025' inline='true' name='federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='sa_market_diurnal_price_2023-2025' name='textscan.0q28st410fm74a1h6nocw1gq3wyg'>
+            <connection class='textscan' directory='/Users/deevit/Desktop/Challenge/data/Charts/Graph4_2010-2013' filename='sa_market_diurnal_price_2023-2025.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0q28st410fm74a1h6nocw1gq3wyg' name='sa_market_diurnal_price_2023-2025.csv' table='[sa_market_diurnal_price_2023-2025#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+            <column datatype='integer' name='year' ordinal='0' />
+            <column datatype='integer' name='month' ordinal='1' />
+            <column datatype='string' name='season' ordinal='2' />
+            <column datatype='integer' name='hour' ordinal='3' />
+            <column datatype='real' name='price' ordinal='4' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[sa_market_diurnal_price_2023-2025.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[sa_market_diurnal_price_2023-2025.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sa_market_diurnal_price_2023-2025.csv_6BC45EAA86A0406CA7F4C545701F4836]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[sa_market_diurnal_price_2023-2025.csv]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sa_market_diurnal_price_2023-2025.csv_6BC45EAA86A0406CA7F4C545701F4836]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>season</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[season]</local-name>
+            <parent-name>[sa_market_diurnal_price_2023-2025.csv]</parent-name>
+            <remote-alias>season</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[sa_market_diurnal_price_2023-2025.csv_6BC45EAA86A0406CA7F4C545701F4836]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hour</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[hour]</local-name>
+            <parent-name>[sa_market_diurnal_price_2023-2025.csv]</parent-name>
+            <remote-alias>hour</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sa_market_diurnal_price_2023-2025.csv_6BC45EAA86A0406CA7F4C545701F4836]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[price]</local-name>
+            <parent-name>[sa_market_diurnal_price_2023-2025.csv]</parent-name>
+            <remote-alias>price</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sa_market_diurnal_price_2023-2025.csv_6BC45EAA86A0406CA7F4C545701F4836]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='sa_market_diurnal_price_2023-2025.csv' datatype='table' name='[__tableau_internal_object_id__].[sa_market_diurnal_price_2023-2025.csv_6BC45EAA86A0406CA7F4C545701F4836]' role='measure' type='quantitative' />
+      <column caption='Hour' datatype='integer' name='[hour]' role='measure' type='quantitative' />
+      <column caption='Month' datatype='integer' name='[month]' role='dimension' type='quantitative' />
+      <column caption='Price' datatype='real' name='[price]' role='measure' type='quantitative' />
+      <column caption='Season' datatype='string' name='[season]' role='dimension' type='nominal' />
+      <column caption='Year' datatype='integer' name='[year]' role='dimension' type='quantitative' />
+      <column-instance column='[hour]' derivation='None' name='[none:hour:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[season]' derivation='None' name='[none:season:nk]' pivot='key' type='nominal' />
+      <group caption='Action (Hour,Season)' hidden='true' name='[Action (Hour,Season)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:hour:ok]' />
+          <groupfilter function='level-members' level='[season]' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/1s/f2lc3nsj7wd3r26zzbgpbk2h0000gn/T/tableau-temp/#TableauTemp_0bc1szz18pabg017ys9no18c9wrc.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>year</remote-alias>
+              <ordinal>0</ordinal>
+              <family>sa_market_diurnal_price_2023-2025.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sa_market_diurnal_price_2023-2025.csv_6BC45EAA86A0406CA7F4C545701F4836]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>month</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[month]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>month</remote-alias>
+              <ordinal>1</ordinal>
+              <family>sa_market_diurnal_price_2023-2025.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sa_market_diurnal_price_2023-2025.csv_6BC45EAA86A0406CA7F4C545701F4836]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>season</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[season]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>season</remote-alias>
+              <ordinal>2</ordinal>
+              <family>sa_market_diurnal_price_2023-2025.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[sa_market_diurnal_price_2023-2025.csv_6BC45EAA86A0406CA7F4C545701F4836]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>hour</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[hour]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>hour</remote-alias>
+              <ordinal>3</ordinal>
+              <family>sa_market_diurnal_price_2023-2025.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sa_market_diurnal_price_2023-2025.csv_6BC45EAA86A0406CA7F4C545701F4836]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>price</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[price]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>price</remote-alias>
+              <ordinal>4</ordinal>
+              <family>sa_market_diurnal_price_2023-2025.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>35651</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[sa_market_diurnal_price_2023-2025.csv_6BC45EAA86A0406CA7F4C545701F4836]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:season:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Autumn&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Winter&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Summer&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Spring&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='sa_market_diurnal_price_2023-2025.csv' id='sa_market_diurnal_price_2023-2025.csv_6BC45EAA86A0406CA7F4C545701F4836'>
+            <properties context=''>
+              <relation connection='textscan.0q28st410fm74a1h6nocw1gq3wyg' name='sa_market_diurnal_price_2023-2025.csv' table='[sa_market_diurnal_price_2023-2025#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+                  <column datatype='integer' name='year' ordinal='0' />
+                  <column datatype='integer' name='month' ordinal='1' />
+                  <column datatype='string' name='season' ordinal='2' />
+                  <column datatype='integer' name='hour' ordinal='3' />
+                  <column datatype='real' name='price' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filter Time' name='[Action1_9CFD57B767BE479E918FFF921B82AAA9]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='all' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Dashboard 1' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontname='Times New Roman'>Market Diurnal (2010 - 2013) </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='sa_market_diurnal_price' name='federated.0hv8psl015hkar1gfdxrt0a0y7qm' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0hv8psl015hkar1gfdxrt0a0y7qm'>
+            <column-instance column='[price]' derivation='Avg' name='[avg:price:qk]' pivot='key' type='quantitative' />
+            <column caption='Hour' datatype='integer' name='[hour]' role='measure' type='quantitative' />
+            <column-instance column='[hour]' derivation='None' name='[none:hour:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[season]' derivation='None' name='[none:season:nk]' pivot='key' type='nominal' />
+            <column caption='Price' datatype='real' name='[price]' role='measure' type='quantitative' />
+            <column caption='Season' datatype='string' name='[season]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[none:hour:qk]' filter-group='3' included-values='in-range-or-null'>
+            <min>0</min>
+            <max>23</max>
+            <target field='[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[none:hour:qk]' />
+          </filter>
+          <slices>
+            <column>[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[none:hour:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[avg:price:qk]' field-type='quantitative' max='400.0' min='-100.0' range-type='fixed' scope='rows' type='space' />
+            <format attr='title' class='0' field='[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[avg:price:qk]' scope='rows' value='Price ($/MWh)' />
+            <format attr='height' field='[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[none:hour:qk]' value='55' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[none:season:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[avg:price:qk]</rows>
+        <cols>[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[none:hour:qk]</cols>
+      </table>
+      <simple-id uuid='{810971E7-5794-4538-B4C5-4C0E3E2C9FD0}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontalignment='1' fontname='Times New Roman'>Market Diurnal (2023 - 2025)</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='sa_market_diurnal_price_2023-2025' name='federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd' />
+            <datasource caption='sa_market_diurnal_price' name='federated.0hv8psl015hkar1gfdxrt0a0y7qm' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Zero Price' datatype='real' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='0.0'>
+              <calculation class='tableau' formula='0.0' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd'>
+            <column-instance column='[price]' derivation='Avg' name='[avg:price:qk]' pivot='key' type='quantitative' />
+            <column caption='Hour' datatype='integer' name='[hour]' role='measure' type='quantitative' />
+            <column-instance column='[hour]' derivation='None' name='[none:hour:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[hour]' derivation='None' name='[none:hour:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[season]' derivation='None' name='[none:season:nk]' pivot='key' type='nominal' />
+            <column caption='Price' datatype='real' name='[price]' role='measure' type='quantitative' />
+            <column caption='Season' datatype='string' name='[season]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0hv8psl015hkar1gfdxrt0a0y7qm'>
+            <column caption='Hour' datatype='integer' name='[hour]' role='measure' type='quantitative' />
+            <column-instance column='[hour]' derivation='None' name='[none:hour:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[Action (Hour,Season)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action1_9CFD57B767BE479E918FFF921B82AAA9]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:hour:ok]' />
+              <groupfilter function='level-members' level='[season]' />
+            </groupfilter>
+          </filter>
+          <filter class='quantitative' column='[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[none:hour:qk]' filter-group='3' included-values='in-range-or-null'>
+            <min>0</min>
+            <max>23</max>
+            <target field='[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[none:hour:qk]' />
+          </filter>
+          <slices>
+            <column>[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[Action (Hour,Season)]</column>
+            <column>[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[none:hour:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='width' field='[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[avg:price:qk]' value='60' />
+            <encoding attr='space' class='0' field='[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[avg:price:qk]' field-type='quantitative' max='440.0' min='-100.0' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='fill-above' id='refline4' value='#00000000' />
+            <format attr='fill-below' id='refline4' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[none:season:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[avg:price:qk]' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-pane' value-column='[Parameters].[Parameter 1]' z-order='1' />
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='left' />
+                <format attr='vertical-align' value='top' />
+                <format attr='wrap' value='off' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='8' />
+                <format attr='font-weight' value='bold' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[avg:price:qk]</rows>
+        <cols>[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[none:hour:qk]</cols>
+        <annotations>
+          <annotation class='area' id='0' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+            <formatted-text>
+              <run>Negative Price&#10;</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='2.2477396021699816'>
+                  <node-reference>
+                    <axis>[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[none:hour:qk]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='-32.5'>
+                  <node-reference>
+                    <axis>[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[avg:price:qk]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='7.8625678119349018'>
+                  <node-reference>
+                    <axis>[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[none:hour:qk]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='-80.961538461538467'>
+                  <node-reference>
+                    <axis>[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[avg:price:qk]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='0.5' y='0.5' />
+          </annotation>
+          <annotation class='area' id='1' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+            <formatted-text>
+              <run>Evening Premiums</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='20.350293542074365'>
+                  <node-reference>
+                    <axis>[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[none:hour:qk]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='399.07662912299895'>
+                  <node-reference>
+                    <axis>[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[avg:price:qk]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='24.947162426614479'>
+                  <node-reference>
+                    <axis>[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[none:hour:qk]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='311.13841241025864'>
+                  <node-reference>
+                    <axis>[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[avg:price:qk]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='0.5' y='0.5' />
+          </annotation>
+        </annotations>
+      </table>
+      <simple-id uuid='{4E1FA6A0-19B4-4A28-B8BB-89D02342CC7A}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size minheight='600' minwidth='1200' sizing-mode='range' />
+      <datasources>
+        <datasource caption='sa_market_diurnal_price' name='federated.0hv8psl015hkar1gfdxrt0a0y7qm' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0hv8psl015hkar1gfdxrt0a0y7qm'>
+        <column caption='Hour' datatype='integer' name='[hour]' role='measure' type='quantitative' />
+        <column-instance column='[hour]' derivation='None' name='[none:hour:qk]' pivot='key' type='quantitative' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='21' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97650' id='24' param='vert' type-v2='layout-flow' w='98742' x='629' y='1175'>
+            <zone h='97650' id='22' type-v2='layout-basic' w='98742' x='629' y='1175' />
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='59502' id='7' name='Sheet 2' w='48192' x='51179' y='4194' />
+        <zone h='59502' id='5' name='Sheet 1' w='45676' x='3931' y='4194' />
+        <zone h='13237' id='6' name='Sheet 1' pane-specification-id='0' param='[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[none:season:nk]' type-v2='color' w='10770' x='39387' y='13368' />
+        <zone h='8957' id='25' name='Sheet 1' param='[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[none:hour:qk]' type-v2='filter' values='database' w='12579' x='50393' y='4258' />
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='20' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97904' id='19' param='vert' type-v2='layout-flow' w='98742' x='629' y='1048'>
+                <zone fixed-size='280' h='59502' id='5' is-fixed='true' name='Sheet 1' w='45676' x='3931' y='4194'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='13237' id='6' name='Sheet 1' pane-specification-id='0' param='[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[none:season:nk]' type-v2='color' w='10770' x='39387' y='13368'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='59502' id='7' is-fixed='true' name='Sheet 2' w='48192' x='51179' y='4194'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{A8FD968C-FCE1-4620-A049-9DDCCE115E43}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='51'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0hv8psl015hkar1gfdxrt0a0y7qm].[none:hour:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B8CC98B6-7D08-413D-9FDC-4FCD5C047922}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 1'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 2'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='5' />
+      <device-preview visible='true' />
+      <simple-id uuid='{CD155386-AE8C-4A71-88FD-0704A92AAA8E}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0gk1ktf0wsqyv41dsqgtq1xx0jmd].[none:season:nk]' size='81' type='color' />
+            <card mode='type_in' param='[Parameters].[Parameter 1]' size='27' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6BFDC27C-6826-45A2-992D-FD929BCA6FF2}' />
+    </window>
+  </windows>
+</workbook>

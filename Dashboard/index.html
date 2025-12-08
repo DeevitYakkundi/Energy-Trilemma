@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SA Energy Trilemma Dashboard</title>
+  <style>
+    .trilemma-toggle-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: #f3f4f8;
+      border-radius: 999px;
+    }
+
+    .toggle-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .toggle input {
+      display: none;
+    }
+
+    .slider {
+      position: relative;
+      width: 40px;
+      height: 20px;
+      background-color: #c3c8d4;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .slider::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      left: 2px;
+      top: 2px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .toggle input:checked + .slider {
+      background-color: #2563eb; /* blue when ON */
+    }
+
+    .toggle input:checked + .slider::before {
+      transform: translateX(20px);
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: #f5f7fb;
+      color: #152033;
+    }
+
+    .section {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .viz-container {
+      margin-top: 1rem;
+      min-height: 350px; /* space reserved for Tableau viz */
+      border-radius: 8px;
+      border: 1px dashed #c3c8d4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7a8190;
+      font-size: 0.9rem;
+    }
+
+    /* Top-of-page toggle container */
+    .page-toggle-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+    }
+
+    /* When explanations are off, hide all .explanation paragraphs */
+    .explanations-off .explanation {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Global explanation on/off toggle -->
+  <div class="page-toggle-wrapper">
+    <label class="toggle">
+      <span class="toggle-label">Show explanations</span>
+      <input type="checkbox" id="explanation-toggle" checked />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <!-- Section 1: Overview -->
+  <div class="section" id="overview">
+    <h1>Overview</h1>
+    <p class="explanation">
+      This dashboard summarises how South Australia’s electricity system has evolved as
+      renewable penetration has risen from almost zero in the mid-2000s to very high levels
+      today. The visuals track the three pillars of the energy trilemma — sustainability,
+      affordability and reliability/security — using open wholesale market data (prices, demand,
+      and renewable generation) from the SA1 region. Together, these charts show how the shift
+      to high wind and solar share has changed price behaviour, residual demand and the
+      overall risk profile of the market.
+    </p>
+
+    <div class="viz-container" id="overview-viz">
+      <div class='tableauPlaceholder' id='viz1765115522019' style='position: relative'>
+        <noscript><a href='#'><img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/Ov/Overviewforelectricitydashboard/Dashboard1/1_rss.png' style='border: none' /></a></noscript>
+        <object class='tableauViz' style='display:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+          <param name='embed_code_version' value='3' />
+          <param name='site_root' value='' />
+          <param name='name' value='Overviewforelectricitydashboard&#47;Dashboard1' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image' value='https://public.tableau.com/static/images/Ov/Overviewforelectricitydashboard/Dashboard1/1.png' />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='en-GB' />
+          <param name='filter' value='publish=yes' />
+        </object>
+      </div>
+      <script type='text/javascript'>
+        var divElement = document.getElementById('viz1765115522019');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        if (divElement.offsetWidth > 800) {
+          vizElement.style.minWidth='420px';vizElement.style.maxWidth='100%';
+          vizElement.style.minHeight='587px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';
+        } else if (divElement.offsetWidth > 500) {
+          vizElement.style.minWidth='420px';vizElement.style.maxWidth='100%';
+          vizElement.style.minHeight='587px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';
+        } else {
+          vizElement.style.width='100%';vizElement.style.height='727px';
+        }
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
+    </div>
+  </div>
+
+  <!-- Section 2: Sustainability -->
+  <div class="section" id="sustainability">
+    <h1>Sustainability</h1>
+    <p class="explanation">
+      The sustainability charts highlight South Australia’s rapid decarbonisation through
+      variable renewable energy (VRE). The long-run VRE share series shows renewable output
+      growing from negligible levels to frequent monthly peaks around 80–90%. Seasonal
+      boxplots reinforce that spring and summer now deliver the highest renewable fractions,
+      reflecting strong wind and solar resources. These visuals demonstrate that SA is
+      successfully maximising the sustainability pillar of the trilemma by dramatically
+      reducing fossil-fuelled generation.
+    </p>
+
+    <div class="viz-container" id="sustainability-viz">
+      <div class='tableauPlaceholder' id='viz1765115867605' style='position: relative'>
+        <noscript><a href='#'><img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/Su/Sustainability_17651158402890/Dashboard1/1_rss.png' style='border: none' /></a></noscript>
+        <object class='tableauViz' style='display:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+          <param name='embed_code_version' value='3' />
+          <param name='site_root' value='' />
+          <param name='name' value='Sustainability_17651158402890&#47;Dashboard1' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image' value='https://public.tableau.com/static/images/Su/Sustainability_17651158402890/Dashboard1/1.png' />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='en-GB' />
+          <param name='filter' value='publish=yes' />
+        </object>
+      </div>
+      <script type='text/javascript'>
+        var divElement2 = document.getElementById('viz1765115867605');
+        var vizElement2 = divElement2.getElementsByTagName('object')[0];
+        if (divElement2.offsetWidth > 800) {
+          vizElement2.style.minWidth='420px';vizElement2.style.maxWidth='100%';
+          vizElement2.style.minHeight='587px';vizElement2.style.maxHeight=(divElement2.offsetWidth*0.75)+'px';
+        } else if (divElement2.offsetWidth > 500) {
+          vizElement2.style.minWidth='420px';vizElement2.style.maxWidth='100%';
+          vizElement2.style.minHeight='587px';vizElement2.style.maxHeight=(divElement2.offsetWidth*0.75)+'px';
+        } else {
+          vizElement2.style.width='100%';vizElement2.style.height='727px';
+        }
+        var scriptElement2 = document.createElement('script');
+        scriptElement2.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement2.parentNode.insertBefore(scriptElement2, vizElement2);
+      </script>
+    </div>
+  </div>
+
+  <!-- Section 3: Affordability -->
+  <div class="section" id="affordability">
+    <h1>Affordability</h1>
+    <p class="explanation">
+      The affordability section focuses on wholesale price behaviour and volatility. Daily
+      price-range charts and seasonal price boxplots show that while average prices can be
+      moderate, the spread between intraday lows and highs has widened significantly in the
+      high-renewables era. Midday periods increasingly exhibit negative prices when VRE is
+      abundant, while evenings see sharp price spikes as firm capacity ramps to meet residual
+      demand. This volatility increases hedging costs for retailers, which ultimately feeds
+      through into higher and more uneven retail bills for households and businesses.
+    </p>
+
+    <div class="viz-container" id="affordability-viz">
+      <div class='tableauPlaceholder' id='viz1765195561926' style='position: relative'>
+        <noscript><a href='#'><img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/20/2010-2013_17650884619210/Dashboard1/1_rss.png' style='border: none' /></a></noscript>
+        <object class='tableauViz' style='display:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+          <param name='embed_code_version' value='3' />
+          <param name='site_root' value='' />
+          <param name='name' value='2010-2013_17650884619210&#47;Dashboard1' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image' value='https://public.tableau.com/static/images/20/2010-2013_17650884619210/Dashboard1/1.png' />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='en-US' />
+          <param name='filter' value='publish=yes' />
+        </object>
+      </div>
+      <script type='text/javascript'>
+        var divElement3 = document.getElementById('viz1765195561926');
+        var vizElement3 = divElement3.getElementsByTagName('object')[0];
+        if (divElement3.offsetWidth > 800) {
+          vizElement3.style.minWidth='1200px';vizElement3.style.maxWidth='100%';
+          vizElement3.style.minHeight='627px';vizElement3.style.maxHeight=(divElement3.offsetWidth*0.75)+'px';
+        } else if (divElement3.offsetWidth > 500) {
+          vizElement3.style.minWidth='1200px';vizElement3.style.maxWidth='100%';
+          vizElement3.style.minHeight='627px';vizElement3.style.maxHeight=(divElement3.offsetWidth*0.75)+'px';
+        } else {
+          vizElement3.style.width='100%';vizElement3.style.height='727px';
+        }
+        var scriptElement3 = document.createElement('script');
+        scriptElement3.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement3.parentNode.insertBefore(scriptElement3, vizElement3);
+      </script>
+    </div>
+  </div>
+
+  <!-- Section 4: Reliability & Security -->
+  <div class="section" id="reliability-security">
+    <h1>Reliability &amp; Security</h1>
+    <p class="explanation">
+      Security charts track residual demand — the portion of demand not met by wind and solar.
+      Although the long-run trend in residual demand is downward, diurnal profiles show that
+      evenings remain heavily reliant on firm capacity such as gas peakers and interconnectors.
+      As renewables displace thermal generators for much of the day, these firm assets must
+      recover their costs in a shrinking number of tight, high-price hours. This concentration
+      of risk makes the system more exposed to outages, fuel shocks or transmission constraints
+      during those peak periods.
+    </p>
+
+    <div class="viz-container" id="reliability-security-viz">
+      <div class='tableauPlaceholder' id='viz1765116370686' style='position: relative'>
+        <noscript><a href='#'><img alt='Dashboard 2 ' src='https://public.tableau.com/static/images/Se/SecurityHorizontal/Dashboard2/1_rss.png' style='border: none' /></a></noscript>
+        <object class='tableauViz' style='display:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+          <param name='embed_code_version' value='3' />
+          <param name='site_root' value='' />
+          <param name='name' value='SecurityHorizontal&#47;Dashboard2' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image' value='https://public.tableau.com/static/images/Se/SecurityHorizontal/Dashboard2/1.png' />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='en-GB' />
+          <param name='filter' value='publish=yes' />
+        </object>
+      </div>
+      <script type='text/javascript'>
+        var divElement4 = document.getElementById('viz1765116370686');
+        var vizElement4 = divElement4.getElementsByTagName('object')[0];
+        if (divElement4.offsetWidth > 800) {
+          vizElement4.style.minWidth='420px';vizElement4.style.maxWidth='100%';
+          vizElement4.style.minHeight='587px';vizElement4.style.maxHeight=(divElement4.offsetWidth*0.75)+'px';
+        } else if (divElement4.offsetWidth > 500) {
+          vizElement4.style.minWidth='420px';vizElement4.style.maxWidth='100%';
+          vizElement4.style.minHeight='587px';vizElement4.style.maxHeight=(divElement4.offsetWidth*0.75)+'px';
+        } else {
+          vizElement4.style.width='100%';vizElement4.style.height='777px';
+        }
+        var scriptElement4 = document.createElement('script');
+        scriptElement4.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement4.parentNode.insertBefore(scriptElement4, vizElement4);
+      </script>
+    </div>
+  </div>
+
+  <!-- Section 5: Conclusion -->
+  <div class="section" id="conclusion">
+    <h1>Conclusion</h1>
+    <p class="explanation">
+      Taken together, the dashboards illustrate how South Australia is optimising the
+      sustainability pillar of the trilemma while creating new pressures on affordability
+      and reliability. High VRE shares deliver substantial emissions reductions but also
+      produce more extreme price swings and greater dependence on a smaller fleet of firm
+      generators and interconnectors. The trade-offs visualised here frame key questions
+      for policy and planning: how to value firm capacity, how to protect vulnerable users
+      who cannot shift their consumption to cheap midday periods, and how to scale storage
+      and flexibility so the benefits of renewables are shared more evenly across the system.
+    </p>
+
+    <h2 style="margin-top:1.5rem;">Energy Trilemma Trade-off</h2>
+    <p class="explanation" style="margin-bottom:0.5rem;">
+      Use the toggles below to explore the trade-offs. You can switch on at most
+      <strong>two</strong> pillars at a time – optimising all three simultaneously isn’t
+      feasible in the current system.
+    </p>
+
+    <div class="trilemma-toggle-row">
+      <!-- Sustainability -->
+      <label class="toggle">
+        <span class="toggle-label">Sustainability</span>
+        <input type="checkbox" class="trilemma-toggle" id="toggle-sus" />
+        <span class="slider"></span>
+      </label>
+
+      <!-- Affordability -->
+      <label class="toggle">
+        <span class="toggle-label">Affordability</span>
+        <input type="checkbox" class="trilemma-toggle" id="toggle-aff" />
+        <span class="slider"></span>
+      </label>
+
+      <!-- Reliability / Security -->
+      <label class="toggle">
+        <span class="toggle-label">Reliability / Security</span>
+        <input type="checkbox" class="trilemma-toggle" id="toggle-rel" />
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <p id="trilemma-message" class="explanation" style="margin-top:0.75rem; font-size:0.9rem; color:#555;">
+      With sustainability and affordability switched on, reliability/security becomes the
+      stressed pillar that must be carefully managed with firm capacity, storage and
+      interconnection.
+    </p>
+  </div>
+
+  <!-- Trilemma toggle logic -->
+  <script>
+    (function () {
+      const toggles = Array.from(document.querySelectorAll('.trilemma-toggle'));
+      const message = document.getElementById('trilemma-message');
+
+      // Track activation order so we know which toggle to turn off
+      let activationOrder = [];
+
+      function updateMessage() {
+        const on = toggles.filter(t => t.checked).map(t => t.id);
+
+        if (!message) return;
+
+        if (on.length === 0) {
+          message.textContent =
+            'All three pillars are off — this represents a system that is neither clean, cheap nor secure.';
+        } else if (on.length === 1) {
+          if (on.includes('toggle-sus')) {
+            message.textContent =
+              'Prioritising sustainability alone lowers emissions but can leave prices volatile and reliability exposed.';
+          } else if (on.includes('toggle-aff')) {
+            message.textContent =
+              'Focusing only on affordability can under-invest in renewables and firm capacity.';
+          } else if (on.includes('toggle-rel')) {
+            message.textContent =
+              'Prioritising reliability/security alone improves firmness but can be expensive and emissions-intensive.';
+          }
+        } else if (on.length === 2) {
+          if (on.includes('toggle-sus') && on.includes('toggle-aff')) {
+            message.textContent =
+              'With sustainability + affordability ON, reliability becomes the stressed pillar.';
+          } else if (on.includes('toggle-sus') && on.includes('toggle-rel')) {
+            message.textContent =
+              'With sustainability + reliability ON, affordability becomes the pressured pillar.';
+          } else if (on.includes('toggle-aff') && on.includes('toggle-rel')) {
+            message.textContent =
+              'With affordability + reliability ON, sustainability tends to lag behind.';
+          }
+        }
+      }
+
+      toggles.forEach(toggle => {
+        toggle.addEventListener('change', function () {
+          if (this.checked) {
+            activationOrder.push(this.id);
+            const onToggles = toggles.filter(t => t.checked);
+            if (onToggles.length > 2) {
+              const oldest = activationOrder.shift();
+              const oldToggle = document.getElementById(oldest);
+              oldToggle.checked = false;
+              activationOrder = activationOrder.filter(id =>
+                document.getElementById(id).checked
+              );
+            }
+          } else {
+            activationOrder = activationOrder.filter(id => id !== this.id);
+          }
+          updateMessage();
+        });
+      });
+
+      updateMessage();
+    })();
+  </script>
+
+  <!-- Global explanation toggle logic -->
+  <script>
+    (function () {
+      const explanationToggle = document.getElementById('explanation-toggle');
+      explanationToggle.addEventListener('change', function () {
+        if (this.checked) {
+          document.body.classList.remove('explanations-off');
+        } else {
+          document.body.classList.add('explanations-off');
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

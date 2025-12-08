@@ -1,0 +1,960 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20252.25.1003.1601                               -->
+<workbook original-version='18.1' source-build='2025.2.4 (20252.25.1003.1601)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <CustomReferenceLineTooltips />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookOptimizerRuleConfig.true...WorkbookOptimizerRuleConfig />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='sa_market_diurnal_price_2023-2025' inline='true' name='federated.1nclw1i0y4qn7t13i407x04dreah' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='sa_market_diurnal_price_2023-2025' name='textscan.1etk16t1lan4es1589ixf1bytzwb'>
+            <connection class='textscan' directory='/Users/deevit/Desktop/Challenge/data/Charts/Graph4_2010-2013' filename='sa_market_diurnal_price_2023-2025.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1etk16t1lan4es1589ixf1bytzwb' name='sa_market_diurnal_price_2023-2025.csv' table='[sa_market_diurnal_price_2023-2025#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+            <column datatype='integer' name='year' ordinal='0' />
+            <column datatype='integer' name='month' ordinal='1' />
+            <column datatype='string' name='season' ordinal='2' />
+            <column datatype='integer' name='hour' ordinal='3' />
+            <column datatype='real' name='price' ordinal='4' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[sa_market_diurnal_price_2023-2025.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[sa_market_diurnal_price_2023-2025.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sa_market_diurnal_price_2023-2025.csv_2AE6E9F330C348668E8CA3148CBA90E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[month]</local-name>
+            <parent-name>[sa_market_diurnal_price_2023-2025.csv]</parent-name>
+            <remote-alias>month</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sa_market_diurnal_price_2023-2025.csv_2AE6E9F330C348668E8CA3148CBA90E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>season</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[season]</local-name>
+            <parent-name>[sa_market_diurnal_price_2023-2025.csv]</parent-name>
+            <remote-alias>season</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[sa_market_diurnal_price_2023-2025.csv_2AE6E9F330C348668E8CA3148CBA90E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>hour</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[hour]</local-name>
+            <parent-name>[sa_market_diurnal_price_2023-2025.csv]</parent-name>
+            <remote-alias>hour</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sa_market_diurnal_price_2023-2025.csv_2AE6E9F330C348668E8CA3148CBA90E3]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>price</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[price]</local-name>
+            <parent-name>[sa_market_diurnal_price_2023-2025.csv]</parent-name>
+            <remote-alias>price</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[sa_market_diurnal_price_2023-2025.csv_2AE6E9F330C348668E8CA3148CBA90E3]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Hour (copy)' datatype='integer' hidden='true' name='[Hour (copy)_3215077566897446912]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[hour]' />
+      </column>
+      <column caption='sa_market_diurnal_price_2023-2025.csv' datatype='table' hidden='true' name='[__tableau_internal_object_id__].[sa_market_diurnal_price_2023-2025.csv_2AE6E9F330C348668E8CA3148CBA90E3]' role='measure' type='quantitative' />
+      <column caption='Hour' datatype='integer' name='[hour]' role='measure' type='quantitative' />
+      <column caption='Month' datatype='integer' hidden='true' name='[month]' role='dimension' type='quantitative' />
+      <column caption='Price' datatype='real' name='[price]' role='measure' type='quantitative' />
+      <column caption='Season' datatype='string' name='[season]' role='dimension' type='nominal' />
+      <column caption='Year' datatype='integer' hidden='true' name='[year]' role='dimension' type='quantitative' />
+      <group caption='Negative price' hidden='true' name='[Set 1]' name-style='unqualified' user:ui-builder='lasso-group'>
+        <groupfilter function='reorder-dimensionality'>
+          <groupfilter function='union'>
+            <groupfilter function='crossjoin'>
+              <groupfilter function='member' level='[season]' member='&quot;Spring&quot;' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[hour]' member='10' />
+                <groupfilter function='member' level='[hour]' member='11' />
+                <groupfilter function='member' level='[hour]' member='12' />
+                <groupfilter function='member' level='[hour]' member='13' />
+                <groupfilter function='member' level='[hour]' member='14' />
+                <groupfilter function='member' level='[hour]' member='15' />
+              </groupfilter>
+            </groupfilter>
+            <groupfilter function='crossjoin'>
+              <groupfilter function='member' level='[season]' member='&quot;Summer&quot;' />
+              <groupfilter function='union'>
+                <groupfilter function='member' level='[hour]' member='10' />
+                <groupfilter function='member' level='[hour]' member='11' />
+                <groupfilter function='member' level='[hour]' member='12' />
+                <groupfilter function='member' level='[hour]' member='13' />
+                <groupfilter function='member' level='[hour]' member='14' />
+              </groupfilter>
+            </groupfilter>
+          </groupfilter>
+          <order>
+            <hierarchy name='[hour]' />
+            <hierarchy name='[season]' />
+          </order>
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/1s/f2lc3nsj7wd3r26zzbgpbk2h0000gn/T/tableau-temp/#TableauTemp_0nkr0ff0lbky2718ughf612n7tnf.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='12/07/2025 02:06:12 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>season</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[season]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>season</remote-alias>
+              <ordinal>0</ordinal>
+              <family>sa_market_diurnal_price_2023-2025.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>hour</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[hour]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>hour</remote-alias>
+              <ordinal>1</ordinal>
+              <family>sa_market_diurnal_price_2023-2025.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>24</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>price</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[price]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>price</remote-alias>
+              <ordinal>2</ordinal>
+              <family>sa_market_diurnal_price_2023-2025.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>38872</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='sa_market_diurnal_price_2023-2025.csv' id='sa_market_diurnal_price_2023-2025.csv_2AE6E9F330C348668E8CA3148CBA90E3'>
+            <properties context=''>
+              <relation connection='textscan.1etk16t1lan4es1589ixf1bytzwb' name='sa_market_diurnal_price_2023-2025.csv' table='[sa_market_diurnal_price_2023-2025#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+                  <column datatype='integer' name='year' ordinal='0' />
+                  <column datatype='integer' name='month' ordinal='1' />
+                  <column datatype='string' name='season' ordinal='2' />
+                  <column datatype='integer' name='hour' ordinal='3' />
+                  <column datatype='real' name='price' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='vre_share_timeseries' inline='true' name='federated.1tz76by1oclguq17goc9u03kx4pr' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='vre_share_timeseries' name='textscan.1e4v8j518cg9at15wko9u0f74mnw'>
+            <connection class='textscan' directory='/Users/deevit/Desktop/Challenge/data/Charts/Graph2_VRE%Share' filename='vre_share_timeseries.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1e4v8j518cg9at15wko9u0f74mnw' name='vre_share_timeseries.csv' table='[vre_share_timeseries#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+            <column datatype='date' name='date' ordinal='0' />
+            <column datatype='real' name='VRE - GWh' ordinal='1' />
+            <column datatype='real' name='Total Generation - GWh' ordinal='2' />
+            <column datatype='real' name='VRE Share (%)' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[vre_share_timeseries.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[vre_share_timeseries.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vre_share_timeseries.csv_7BD5488D00D24489A6B04DA73A69DC80]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VRE - GWh</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[VRE - GWh]</local-name>
+            <parent-name>[vre_share_timeseries.csv]</parent-name>
+            <remote-alias>VRE - GWh</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vre_share_timeseries.csv_7BD5488D00D24489A6B04DA73A69DC80]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Total Generation - GWh</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Total Generation - GWh]</local-name>
+            <parent-name>[vre_share_timeseries.csv]</parent-name>
+            <remote-alias>Total Generation - GWh</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vre_share_timeseries.csv_7BD5488D00D24489A6B04DA73A69DC80]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>VRE Share (%)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[VRE Share (%)]</local-name>
+            <parent-name>[vre_share_timeseries.csv]</parent-name>
+            <remote-alias>VRE Share (%)</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[vre_share_timeseries.csv_7BD5488D00D24489A6B04DA73A69DC80]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='vre_share_timeseries.csv' datatype='table' name='[__tableau_internal_object_id__].[vre_share_timeseries.csv_7BD5488D00D24489A6B04DA73A69DC80]' role='measure' type='quantitative' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/1s/f2lc3nsj7wd3r26zzbgpbk2h0000gn/T/tableau-temp/#TableauTemp_10mmllh0zq93tq1a88wa71gza7nf.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='12/07/2025 02:08:16 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>vre_share_timeseries.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>322</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>VRE - GWh</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[VRE - GWh]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>VRE - GWh</remote-alias>
+              <ordinal>1</ordinal>
+              <family>vre_share_timeseries.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>222</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Total Generation - GWh</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Total Generation - GWh]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Total Generation - GWh</remote-alias>
+              <ordinal>2</ordinal>
+              <family>vre_share_timeseries.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>322</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>VRE Share (%)</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[VRE Share (%)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>VRE Share (%)</remote-alias>
+              <ordinal>3</ordinal>
+              <family>vre_share_timeseries.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>222</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='vre_share_timeseries.csv' id='vre_share_timeseries.csv_7BD5488D00D24489A6B04DA73A69DC80'>
+            <properties context=''>
+              <relation connection='textscan.1e4v8j518cg9at15wko9u0f74mnw' name='vre_share_timeseries.csv' table='[vre_share_timeseries#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+                  <column datatype='date' name='date' ordinal='0' />
+                  <column datatype='real' name='VRE - GWh' ordinal='1' />
+                  <column datatype='real' name='Total Generation - GWh' ordinal='2' />
+                  <column datatype='real' name='VRE Share (%)' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='renewables_fossilfuels_timeseries' inline='true' name='federated.1ad8pbk1d6jt8w10tquuv0me3y3h' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='renewables_fossilfuels_timeseries' name='textscan.1t1c70p18h7l9o1fnic6q0x1q7sv'>
+            <connection class='textscan' directory='/Users/deevit/Desktop/Challenge/data/Charts/Graph1_Fossil fuels vs Renewable' filename='renewables_fossilfuels_timeseries.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1t1c70p18h7l9o1fnic6q0x1q7sv' name='renewables_fossilfuels_timeseries.csv' table='[renewables_fossilfuels_timeseries#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+            <column datatype='date' name='date' ordinal='0' />
+            <column datatype='real' name='Renewables - GWh' ordinal='1' />
+            <column datatype='real' name='Fossil Fuels - GWh' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[renewables_fossilfuels_timeseries.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_AU&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[renewables_fossilfuels_timeseries.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[renewables_fossilfuels_timeseries.csv_FA18C5F03AAE4EB98A70769FF87EC1FC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Renewables - GWh</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Renewables - GWh]</local-name>
+            <parent-name>[renewables_fossilfuels_timeseries.csv]</parent-name>
+            <remote-alias>Renewables - GWh</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[renewables_fossilfuels_timeseries.csv_FA18C5F03AAE4EB98A70769FF87EC1FC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Fossil Fuels - GWh</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Fossil Fuels - GWh]</local-name>
+            <parent-name>[renewables_fossilfuels_timeseries.csv]</parent-name>
+            <remote-alias>Fossil Fuels - GWh</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[renewables_fossilfuels_timeseries.csv_FA18C5F03AAE4EB98A70769FF87EC1FC]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='renewables_fossilfuels_timeseries.csv' datatype='table' name='[__tableau_internal_object_id__].[renewables_fossilfuels_timeseries.csv_FA18C5F03AAE4EB98A70769FF87EC1FC]' role='measure' type='quantitative' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/1s/f2lc3nsj7wd3r26zzbgpbk2h0000gn/T/tableau-temp/#TableauTemp_0cz3brf17qk6z312avc4b045x4t7.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='12/07/2025 02:22:48 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>renewables_fossilfuels_timeseries.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>322</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[renewables_fossilfuels_timeseries.csv_FA18C5F03AAE4EB98A70769FF87EC1FC]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Renewables - GWh</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Renewables - GWh]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Renewables - GWh</remote-alias>
+              <ordinal>1</ordinal>
+              <family>renewables_fossilfuels_timeseries.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>222</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[renewables_fossilfuels_timeseries.csv_FA18C5F03AAE4EB98A70769FF87EC1FC]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Fossil Fuels - GWh</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Fossil Fuels - GWh]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Fossil Fuels - GWh</remote-alias>
+              <ordinal>2</ordinal>
+              <family>renewables_fossilfuels_timeseries.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>322</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[renewables_fossilfuels_timeseries.csv_FA18C5F03AAE4EB98A70769FF87EC1FC]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Australia&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='renewables_fossilfuels_timeseries.csv' id='renewables_fossilfuels_timeseries.csv_FA18C5F03AAE4EB98A70769FF87EC1FC'>
+            <properties context=''>
+              <relation connection='textscan.1t1c70p18h7l9o1fnic6q0x1q7sv' name='renewables_fossilfuels_timeseries.csv' table='[renewables_fossilfuels_timeseries#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_AU' separator=','>
+                  <column datatype='date' name='date' ordinal='0' />
+                  <column datatype='real' name='Renewables - GWh' ordinal='1' />
+                  <column datatype='real' name='Fossil Fuels - GWh' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions brushing-enabled='false' />
+  <worksheets>
+    <worksheet name='FosselFuel_Renewable'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>FosselFuel_Renewable</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='renewables_fossilfuels_timeseries' name='federated.1ad8pbk1d6jt8w10tquuv0me3y3h' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ad8pbk1d6jt8w10tquuv0me3y3h'>
+            <column datatype='real' name='[Fossil Fuels - GWh]' role='measure' type='quantitative' />
+            <column datatype='real' name='[Renewables - GWh]' role='measure' type='quantitative' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[Fossil Fuels - GWh]' derivation='Sum' name='[sum:Fossil Fuels - GWh:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Renewables - GWh]' derivation='Sum' name='[sum:Renewables - GWh:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Year-Trunc' name='[tyr:date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1ad8pbk1d6jt8w10tquuv0me3y3h].[sum:Renewables - GWh:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ad8pbk1d6jt8w10tquuv0me3y3h].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1ad8pbk1d6jt8w10tquuv0me3y3h].[sum:Fossil Fuels - GWh:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ad8pbk1d6jt8w10tquuv0me3y3h].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1ad8pbk1d6jt8w10tquuv0me3y3h].[sum:Renewables - GWh:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1ad8pbk1d6jt8w10tquuv0me3y3h].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.1ad8pbk1d6jt8w10tquuv0me3y3h].[sum:Fossil Fuels - GWh:qk] + [federated.1ad8pbk1d6jt8w10tquuv0me3y3h].[sum:Renewables - GWh:qk])</rows>
+        <cols>[federated.1ad8pbk1d6jt8w10tquuv0me3y3h].[tyr:date:qk]</cols>
+      </table>
+      <simple-id uuid='{A3EB6D4E-A58A-4068-9E7C-1D5632739854}' />
+    </worksheet>
+    <worksheet name='PriceBasedOnSeason4'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='sa_market_diurnal_price_2023-2025' name='federated.1nclw1i0y4qn7t13i407x04dreah' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1nclw1i0y4qn7t13i407x04dreah'>
+            <column-instance column='[price]' derivation='Avg' name='[avg:price:qk]' pivot='key' type='quantitative' />
+            <column caption='Hour' datatype='integer' name='[hour]' role='measure' type='quantitative' />
+            <column-instance column='[hour]' derivation='None' name='[none:hour:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[season]' derivation='None' name='[none:season:nk]' pivot='key' type='nominal' />
+            <column caption='Price' datatype='real' name='[price]' role='measure' type='quantitative' />
+            <column caption='Season' datatype='string' name='[season]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1nclw1i0y4qn7t13i407x04dreah].[avg:price:qk]' field-type='quantitative' max='443.94287247660134' min='-65.240572777402178' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.1nclw1i0y4qn7t13i407x04dreah].[none:hour:qk]' field-type='quantitative' max='26' min='-1' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='fill-above' id='refline4' value='#00000000' />
+            <format attr='fill-below' id='refline4' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1nclw1i0y4qn7t13i407x04dreah].[none:season:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.1nclw1i0y4qn7t13i407x04dreah].[avg:price:qk]' enable-instant-analytics='true' formula='average' id='refline0' label='' label-type='custom' probability='95' scope='per-table' tooltip='' tooltip-type='custom' value-column='[federated.1nclw1i0y4qn7t13i407x04dreah].[avg:price:qk]' z-order='1' />
+            <reference-line axis-column='[federated.1nclw1i0y4qn7t13i407x04dreah].[avg:price:qk]' enable-instant-analytics='true' formula='average' id='refline4' label-type='automatic' probability='95' scope='per-table' value-column='[federated.1nclw1i0y4qn7t13i407x04dreah].[avg:price:qk]' z-order='2' />
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='left' />
+                <format attr='vertical-align' value='top' />
+                <format attr='wrap' value='off' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='8' />
+                <format attr='font-weight' value='bold' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-mode' value='highlight' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='size' value='1.3953038454055786' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1nclw1i0y4qn7t13i407x04dreah].[avg:price:qk]</rows>
+        <cols>[federated.1nclw1i0y4qn7t13i407x04dreah].[none:hour:qk]</cols>
+        <annotations>
+          <annotation class='area' id='0' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+            <formatted-text>
+              <run>Negative Prices&#10;</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='5.8484848484848486'>
+                  <node-reference>
+                    <axis>[federated.1nclw1i0y4qn7t13i407x04dreah].[none:hour:qk]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='-10.36818881976'>
+                  <node-reference>
+                    <axis>[federated.1nclw1i0y4qn7t13i407x04dreah].[avg:price:qk]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='8.8787878787878789'>
+                  <node-reference>
+                    <axis>[federated.1nclw1i0y4qn7t13i407x04dreah].[none:hour:qk]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='-57.171104548337155'>
+                  <node-reference>
+                    <axis>[federated.1nclw1i0y4qn7t13i407x04dreah].[avg:price:qk]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='0.5' y='0.5' />
+          </annotation>
+          <annotation class='area' id='2' text-pinx='0.5' text-piny='0.5' text-width-delta='-18'>
+            <formatted-text>
+              <run>Evening Premiums&#10;</run>
+            </formatted-text>
+            <top-left>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='11.545454545454547'>
+                  <node-reference>
+                    <axis>[federated.1nclw1i0y4qn7t13i407x04dreah].[none:hour:qk]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='397.13995674802402'>
+                  <node-reference>
+                    <axis>[federated.1nclw1i0y4qn7t13i407x04dreah].[avg:price:qk]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </top-left>
+            <bottom-right>
+              <visual-coordinate class='axis'>
+                <x-coord axis-value='14.575757575757574'>
+                  <node-reference>
+                    <axis>[federated.1nclw1i0y4qn7t13i407x04dreah].[none:hour:qk]</axis>
+                  </node-reference>
+                </x-coord>
+                <y-coord axis-value='194.59630419849182'>
+                  <node-reference>
+                    <axis>[federated.1nclw1i0y4qn7t13i407x04dreah].[avg:price:qk]</axis>
+                  </node-reference>
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </bottom-right>
+            <text x='0.5' y='0.5' />
+          </annotation>
+        </annotations>
+      </table>
+      <simple-id uuid='{7AE7AECD-527D-4A7A-B94E-CC0CDB14E30A}' />
+    </worksheet>
+    <worksheet name='PriceBoxplot'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Price Box Plot&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='sa_market_diurnal_price_2023-2025' name='federated.1nclw1i0y4qn7t13i407x04dreah' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1nclw1i0y4qn7t13i407x04dreah'>
+            <column-instance column='[price]' derivation='Max' name='[max:price:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[season]' derivation='None' name='[none:season:nk]' pivot='key' type='nominal' />
+            <column caption='Price' datatype='real' name='[price]' role='measure' type='quantitative' />
+            <column caption='Season' datatype='string' name='[season]' role='dimension' type='nominal' />
+            <column-instance column='[price]' derivation='Sum' name='[sum:price:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1nclw1i0y4qn7t13i407x04dreah].[max:price:qk]' field-type='quantitative' max='12928167.1193' min='0.0' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <lod column='[federated.1nclw1i0y4qn7t13i407x04dreah].[none:season:nk]' />
+              <lod column='[federated.1nclw1i0y4qn7t13i407x04dreah].[sum:price:qk]' />
+            </encodings>
+            <reference-line axis-column='[federated.1nclw1i0y4qn7t13i407x04dreah].[max:price:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.1nclw1i0y4qn7t13i407x04dreah].[max:price:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.25' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1nclw1i0y4qn7t13i407x04dreah].[max:price:qk]</rows>
+        <cols>[federated.1nclw1i0y4qn7t13i407x04dreah].[none:season:nk]</cols>
+      </table>
+      <simple-id uuid='{F7AB29E5-F378-421D-A48A-365AFD9C3B2C}' />
+    </worksheet>
+    <worksheet name='VREShare2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>VRE%SHARE</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='vre_share_timeseries' name='federated.1tz76by1oclguq17goc9u03kx4pr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1tz76by1oclguq17goc9u03kx4pr'>
+            <column datatype='real' name='[VRE Share (%)]' role='measure' type='quantitative' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[VRE Share (%)]' derivation='Sum' name='[sum:VRE Share (%):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date]' derivation='Month-Trunc' name='[tmn:date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1tz76by1oclguq17goc9u03kx4pr].[tmn:date:qk]' field-type='quantitative' max='#2027-01-23 11:42:30.857#' min='#2016-01-01 00:00:00#' range-type='fixed' scope='cols' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#72b966' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+                <format attr='mark-labels-mode' value='selection' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1tz76by1oclguq17goc9u03kx4pr].[sum:VRE Share (%):qk]</rows>
+        <cols>[federated.1tz76by1oclguq17goc9u03kx4pr].[tmn:date:qk]</cols>
+      </table>
+      <simple-id uuid='{875BF780-80A2-4A41-A61C-A53B1463F319}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='72'>
+    <window class='worksheet' name='PriceBasedOnSeason4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.1nclw1i0y4qn7t13i407x04dreah].[none:season:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FF39377F-8AC3-47D4-ABA8-CB497A62528B}' />
+    </window>
+    <window class='worksheet' name='VREShare2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B42A442C-07FB-41D9-96BB-C49836A7746A}' />
+    </window>
+    <window class='worksheet' name='FosselFuel_Renewable'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.1ad8pbk1d6jt8w10tquuv0me3y3h].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F0BBA3AD-E8BC-41DE-8183-CA52B7D4DF4A}' />
+    </window>
+    <window class='worksheet' maximized='true' name='PriceBoxplot'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D7E62AF2-BD41-4862-B167-00DC2C5DB096}' />
+    </window>
+  </windows>
+  <_.fcp.WorkbookOptimizerRuleConfig.true...workbook-optimizer>
+    <rule-config>
+      <rule ignored='true' ruleID='13' />
+    </rule-config>
+  </_.fcp.WorkbookOptimizerRuleConfig.true...workbook-optimizer>
+</workbook>
