@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <title>SA Energy Trilemma Dashboard</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     .trilemma-toggle-row {
       display: flex;
       flex-wrap: wrap;
@@ -98,28 +102,109 @@
       font-size: 0.9rem;
     }
 
-    /* Top-of-page toggle container */
-    .page-toggle-wrapper {
+    /* Top navigation bar */
+    .navbar {
       display: flex;
-      justify-content: flex-end;
-      margin-bottom: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      padding: 0.75rem 2rem;
+      margin: -2rem -2rem 1.5rem -2rem; /* stretch full width */
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    /* When explanations are off, hide all .explanation paragraphs */
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-title-link {
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: #152033;
+    }
+
+    .nav-title-link:hover {
+      text-decoration: underline;
+    }
+
+    .nav-links a {
+      margin-right: 1rem;
+      text-decoration: none;
+      color: #2563eb;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:last-child {
+      margin-right: 0;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+
+    /* When explanations are off, hide all .explanation elements */
     .explanations-off .explanation {
       display: none;
     }
+
+    /* Team list styling */
+    .team-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.5rem 0 0;
+    }
+
+    .team-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .team-list a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .team-list a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
-<body>
+<body id="top">
 
-  <!-- Global explanation on/off toggle -->
-  <div class="page-toggle-wrapper">
-    <label class="toggle">
-      <span class="toggle-label">Show explanations</span>
-      <input type="checkbox" id="explanation-toggle" checked />
-      <span class="slider"></span>
-    </label>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="nav-left">
+      <!-- Clicking this scrolls back to the top -->
+      <a href="#top" class="nav-title-link">The Energy Trilemma</a>
+      <div class="nav-links">
+        <a href="https://drive.google.com/file/d/1vJdYZh8aV8vHLoH7ouE1tClBQi_IVzA6/view?usp=sharing"
+           target="_blank" rel="noopener noreferrer">Documentation</a>
+
+        <!-- Local poster file (adjust path/name as needed) -->
+        <a href="assets/Energy_Trilemma_Poster.pdf" target="_blank" rel="noopener noreferrer">Poster</a>
+
+        <a href="#team">Team</a>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <label class="toggle">
+        <span class="toggle-label">Show explanations</span>
+        <input type="checkbox" id="explanation-toggle" checked />
+        <span class="slider"></span>
+      </label>
+    </div>
   </div>
 
   <!-- Section 1: Overview -->
@@ -127,10 +212,12 @@
     <h1>Overview</h1>
     <p class="explanation">
       This dashboard summarises how South Australia’s electricity system has evolved as
-      renewable penetration has risen from almost zero in the mid-2000s to very high levels
-      today. The visuals track the three pillars of the energy trilemma — sustainability,
-      affordability and reliability/security — using open wholesale market data (prices, demand,
-      and renewable generation) from the SA1 region. Together, these charts show how the shift
+      renewable penetration has risen from almost zero in the mid 2000s to very high levels
+      today. <br>
+      The visuals track the three pillars of the energy trilemma: <b>sustainability,
+      affordability</b> and <b>reliability/security.</b> <br>
+      Using <a href="https://openelectricity.org.au/" target="_blank" rel="noopener noreferrer">Open Electricity</a>
+      wholesale market data for the South Australia region, these charts show how the shift
       to high wind and solar share has changed price behaviour, residual demand and the
       overall risk profile of the market.
     </p>
@@ -180,11 +267,11 @@
     <p class="explanation">
       The sustainability charts highlight South Australia’s rapid decarbonisation through
       variable renewable energy (VRE). The long-run VRE share series shows renewable output
-      growing from negligible levels to frequent monthly peaks around 80–90%. Seasonal
-      boxplots reinforce that spring and summer now deliver the highest renewable fractions,
+      growing from negligible levels to frequent monthly peaks around <b>80–90%</b>. <br>
+      Seasonal boxplots reinforce that <b>spring and summer</b> now deliver the highest renewable fractions,
       reflecting strong wind and solar resources. These visuals demonstrate that SA is
-      successfully maximising the sustainability pillar of the trilemma by dramatically
-      reducing fossil-fuelled generation.
+      <b>successfully maximising the sustainability pillar</b> of the trilemma by dramatically
+      <u><b>reducing fossil-fuelled generation.</b></u>
     </p>
 
     <div class="viz-container" id="sustainability-viz">
@@ -231,12 +318,15 @@
     <h1>Affordability</h1>
     <p class="explanation">
       The affordability section focuses on wholesale price behaviour and volatility. Daily
-      price-range charts and seasonal price boxplots show that while average prices can be
+      price-range charts and seasonal price distributions show that while average prices can be
       moderate, the spread between intraday lows and highs has widened significantly in the
       high-renewables era. Midday periods increasingly exhibit negative prices when VRE is
       abundant, while evenings see sharp price spikes as firm capacity ramps to meet residual
-      demand. This volatility increases hedging costs for retailers, which ultimately feeds
-      through into higher and more uneven retail bills for households and businesses.
+      demand. This pattern highlights the classic
+      <a href="https://www.synergy.net.au/Blog/2021/10/Everything-you-need-to-know-about-the-Duck-Curve"
+         target="_blank" rel="noopener noreferrer"><b>“duck curve”</b></a> emerging in wholesale
+      prices: volatility increases costs for retailers, which ultimately feeds
+      through into <b>higher and more uneven retail bills for households and businesses.</b>
     </p>
 
     <div class="viz-container" id="affordability-viz">
@@ -280,15 +370,13 @@
 
   <!-- Section 4: Reliability & Security -->
   <div class="section" id="reliability-security">
-    <h1>Reliability &amp; Security</h1>
+    <h1>Reliability</h1>
     <p class="explanation">
-      Security charts track residual demand — the portion of demand not met by wind and solar.
-      Although the long-run trend in residual demand is downward, diurnal profiles show that
-      evenings remain heavily reliant on firm capacity such as gas peakers and interconnectors.
-      As renewables displace thermal generators for much of the day, these firm assets must
-      recover their costs in a shrinking number of tight, high-price hours. This concentration
-      of risk makes the system more exposed to outages, fuel shocks or transmission constraints
-      during those peak periods.
+      Residual demand reveals when the system relies on firm generation. <b>Midday periods often require little
+      thermal output, but evenings still depend heavily on gas and interconnector flows.</b> As VRE grows, firm generators
+      run fewer hours yet must respond to steeper ramps, increasing reliability risk if outages or constraints occur
+      during these tight peak periods. The system becomes secure <b>only when storage, transmission and flexible demand
+      scale to support these high-stress intervals.</b>
     </p>
 
     <div class="viz-container" id="reliability-security-viz">
@@ -335,20 +423,23 @@
     <h1>Conclusion</h1>
     <p class="explanation">
       Taken together, the dashboards illustrate how South Australia is optimising the
-      sustainability pillar of the trilemma while creating new pressures on affordability
-      and reliability. High VRE shares deliver substantial emissions reductions but also
-      produce more extreme price swings and greater dependence on a smaller fleet of firm
-      generators and interconnectors. The trade-offs visualised here frame key questions
-      for policy and planning: how to value firm capacity, how to protect vulnerable users
-      who cannot shift their consumption to cheap midday periods, and how to scale storage
-      and flexibility so the benefits of renewables are shared more evenly across the system.
+      sustainability pillar of the trilemma while creating new <u>pressures on affordability
+      and reliability.</u> High VRE shares deliver substantial emissions reductions but also
+      produce more <b>extreme price swings</b> and greater dependence on a smaller fleet of firm
+      generators and interconnectors. <br>
+      The trade offs visualised here frame key questions
+      for policy and planning:
     </p>
+    <ol class="explanation">
+      <li>How to value firm capacity?</li>
+      <li>How to protect vulnerable users who cannot shift their consumption to cheap midday periods?</li>
+      <li>How to scale storage and flexibility so the benefits of renewables are shared more evenly across the system?</li>
+    </ol>
 
-    <h2 style="margin-top:1.5rem;">Energy Trilemma Trade-off</h2>
+    <h2 style="margin-top:1.5rem;">Energy Trilemma Trade-off Analogy</h2>
     <p class="explanation" style="margin-bottom:0.5rem;">
-      Use the toggles below to explore the trade-offs. You can switch on at most
-      <strong>two</strong> pillars at a time – optimising all three simultaneously isn’t
-      feasible in the current system.
+      Use the toggles below to explore the trade offs. <br>
+      <i>(You can switch on at most <u>two</u> pillars at a time.)</i>
     </p>
 
     <div class="trilemma-toggle-row">
@@ -366,86 +457,131 @@
         <span class="slider"></span>
       </label>
 
-      <!-- Reliability / Security -->
+      <!-- Reliability -->
       <label class="toggle">
-        <span class="toggle-label">Reliability / Security</span>
+        <span class="toggle-label">Reliability</span>
         <input type="checkbox" class="trilemma-toggle" id="toggle-rel" />
         <span class="slider"></span>
       </label>
     </div>
 
     <p id="trilemma-message" class="explanation" style="margin-top:0.75rem; font-size:0.9rem; color:#555;">
-      With sustainability and affordability switched on, reliability/security becomes the
+      With sustainability and affordability switched on, reliability becomes the
       stressed pillar that must be carefully managed with firm capacity, storage and
       interconnection.
     </p>
+    <p><b>Optimising all three simultaneously isn’t
+      feasible in the current system.</b></p>
+  </div>
+
+  <!-- Data section -->
+  <div class="section" id="data">
+    <h1>Data</h1>
+    <p>
+      This visualisation uses open data from the
+      <a href="https://openelectricity.org.au/" target="_blank" rel="noopener noreferrer">
+        Open Electricity
+      </a>
+      platform.
+    </p>
+  </div>
+
+  <!-- Section 6: Team -->
+  <div class="section" id="team">
+    <h1>Team</h1>
+    <p>
+      This dashboard was developed by the following team members:
+    </p>
+    <ul class="team-list">
+      <li>
+        <strong>Duy Trung Pham</strong> —
+        <a href="mailto:david.pham@student.adelaide.edu.au">
+          david.pham@student.adelaide.edu.au
+        </a>
+      </li>
+      <li>
+        <strong>Deevit Deepak Yakkundi</strong> —
+        <a href="mailto:deevitdeepak.yakkundi@student.adelaide.edu.au">
+          deevitdeepak.yakkundi@student.adelaide.edu.au
+        </a>
+      </li>
+      <li>
+        <strong>Zac Horbelt</strong> —
+        <a href="mailto:zac.horbelt@adelaide.edu.au">
+          zac.horbelt@adelaide.edu.au
+        </a>
+      </li>
+    </ul>
   </div>
 
   <!-- Trilemma toggle logic -->
-  <script>
-    (function () {
-      const toggles = Array.from(document.querySelectorAll('.trilemma-toggle'));
-      const message = document.getElementById('trilemma-message');
+  <!-- Trilemma toggle logic -->
+<!-- Trilemma toggle logic -->
+<script>
+  (function () {
+    const toggles = Array.from(document.querySelectorAll('.trilemma-toggle'));
+    const message = document.getElementById('trilemma-message');
 
-      // Track activation order so we know which toggle to turn off
-      let activationOrder = [];
+    // Track activation order so we know which toggle to turn off
+    let activationOrder = [];
 
-      function updateMessage() {
-        const on = toggles.filter(t => t.checked).map(t => t.id);
+    function updateMessage() {
+      const on = toggles.filter(t => t.checked).map(t => t.id);
 
-        if (!message) return;
+      if (!message) return;
 
-        if (on.length === 0) {
+      if (on.length === 0) {
+        message.textContent =
+          'All three pillars are off. This represents a system that is neither clean, cheap nor secure. In practice this would look like high emissions, unstable prices and a fragile grid.';
+      } else if (on.length === 1) {
+        if (on.includes('toggle-sus')) {
           message.textContent =
-            'All three pillars are off — this represents a system that is neither clean, cheap nor secure.';
-        } else if (on.length === 1) {
-          if (on.includes('toggle-sus')) {
-            message.textContent =
-              'Prioritising sustainability alone lowers emissions but can leave prices volatile and reliability exposed.';
-          } else if (on.includes('toggle-aff')) {
-            message.textContent =
-              'Focusing only on affordability can under-invest in renewables and firm capacity.';
-          } else if (on.includes('toggle-rel')) {
-            message.textContent =
-              'Prioritising reliability/security alone improves firmness but can be expensive and emissions-intensive.';
-          }
-        } else if (on.length === 2) {
-          if (on.includes('toggle-sus') && on.includes('toggle-aff')) {
-            message.textContent =
-              'With sustainability + affordability ON, reliability becomes the stressed pillar.';
-          } else if (on.includes('toggle-sus') && on.includes('toggle-rel')) {
-            message.textContent =
-              'With sustainability + reliability ON, affordability becomes the pressured pillar.';
-          } else if (on.includes('toggle-aff') && on.includes('toggle-rel')) {
-            message.textContent =
-              'With affordability + reliability ON, sustainability tends to lag behind.';
-          }
+            'Prioritising sustainability alone lowers emissions, but without enough firm backup or price signals the system can face price spikes and a higher risk of shortages when the wind and sun are low.';
+        } else if (on.includes('toggle-aff')) {
+          message.textContent =
+            'Focusing only on affordability pushes for the lowest short term cost. This often means more fossil fuels and under investment in backup and renewables, which makes the system dirtier and more fragile over time.';
+        } else if (on.includes('toggle-rel')) {
+          message.textContent =
+            'Prioritising reliability alone means paying for a lot of firm capacity and redundancy. This keeps the lights on, but it can be expensive and usually relies on higher emissions generation.';
+        }
+      } else if (on.length === 2) {
+        if (on.includes('toggle-sus') && on.includes('toggle-aff')) {
+          message.textContent =
+            'With Sustainability and Affordability on, Reliability becomes the stressed pillar. Clean and cheap power pushes down prices and squeezes the running hours of firm generators, so they have fewer chances to recover their costs. If this is not managed well there may not be enough firm capacity available during rare high demand or low renewables hours.';
+        } else if (on.includes('toggle-sus') && on.includes('toggle-rel')) {
+          message.textContent =
+            'With Sustainability and Reliability on, Affordability becomes the pressured pillar. Keeping the system both clean and secure requires extra investment in renewables, storage, firm backup and networks. Those costs have to be recovered, which tends to put upward pressure on customer bills.';
+        } else if (on.includes('toggle-aff') && on.includes('toggle-rel')) {
+          message.textContent =
+            'With Affordability and Reliability on, Sustainability tends to lag behind. Focusing on cheap, always available power often favours existing fossil fuel plant, because that is currently the easiest way to deliver low prices and firm capacity. This slows down the build out of renewables and delays emissions reductions.';
         }
       }
+    }
 
-      toggles.forEach(toggle => {
-        toggle.addEventListener('change', function () {
-          if (this.checked) {
-            activationOrder.push(this.id);
-            const onToggles = toggles.filter(t => t.checked);
-            if (onToggles.length > 2) {
-              const oldest = activationOrder.shift();
-              const oldToggle = document.getElementById(oldest);
-              oldToggle.checked = false;
-              activationOrder = activationOrder.filter(id =>
-                document.getElementById(id).checked
-              );
-            }
-          } else {
-            activationOrder = activationOrder.filter(id => id !== this.id);
+    toggles.forEach(toggle => {
+      toggle.addEventListener('change', function () {
+        if (this.checked) {
+          activationOrder.push(this.id);
+          const onToggles = toggles.filter(t => t.checked);
+          if (onToggles.length > 2) {
+            const oldest = activationOrder.shift();
+            const oldToggle = document.getElementById(oldest);
+            oldToggle.checked = false;
+            activationOrder = activationOrder.filter(id =>
+              document.getElementById(id).checked
+            );
           }
-          updateMessage();
-        });
+        } else {
+          activationOrder = activationOrder.filter(id => id !== this.id);
+        }
+        updateMessage();
       });
+    });
 
-      updateMessage();
-    })();
-  </script>
+    updateMessage();
+  })();
+</script>
+
 
   <!-- Global explanation toggle logic -->
   <script>
